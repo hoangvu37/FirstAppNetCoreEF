@@ -30,6 +30,55 @@ namespace netcoreapi.EntityConfiguration
             builder.HasOne(p => p.ProductDetail)
                 .WithOne(s => s.Product)
                 .HasForeignKey<ProductDetail>(p => p.ProductID);
+
+            builder.HasData(
+                new Product
+                {
+                    ID = 1,
+                    Description = "Descriptions",
+                    Name = "Prodcut1",
+                    Price = 100,
+                    Rating = 1,
+                    DiscontinuedDate = DateTime.Now,
+                    ReleaseDate = DateTime.Now,
+                    SupplierID = 1
+                },
+                new Product
+                {
+                    ID = 2,
+                    Description = "Descriptions",
+                    Name = "Prodcut 2",
+                    Price = 100,
+                    Rating = 1,
+                    DiscontinuedDate = DateTime.Now,
+                    ReleaseDate = DateTime.Now,
+                    SupplierID = 1
+                }
+                ,
+                new Product
+                {
+                    ID = 3,
+                    Description = "Descriptions 3",
+                    Name = "Prodcut 3 ",
+                    Price = 100,
+                    Rating = 1,
+                    DiscontinuedDate = DateTime.Now,
+                    ReleaseDate = DateTime.Now,
+                    SupplierID = 1
+                }
+                ,
+                new Product
+                {
+                    ID = 4,
+                    Description = "Descriptions 4",
+                    Name = "Prodcut 4",
+                    Price = 100,
+                    Rating = 1,
+                    DiscontinuedDate = DateTime.Now,
+                    ReleaseDate = DateTime.Now,
+                    SupplierID = 1
+                }
+            );
         }
     }
 }

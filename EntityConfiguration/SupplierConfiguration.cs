@@ -18,6 +18,19 @@ namespace netcoreapi.EntityConfiguration
                     .IsRequired()
                     .IsUnicode(true)
                     .HasMaxLength(256);
+
+            builder.HasData(
+                new Supplier
+                {
+                    ID= 1, Address =  "Address", Name = "Name 1"
+                },
+                new Supplier
+                {
+                    ID = 2,
+                    Address = "Address",
+                    Name = "Name 1"
+                }
+            );
         }
     }
 }

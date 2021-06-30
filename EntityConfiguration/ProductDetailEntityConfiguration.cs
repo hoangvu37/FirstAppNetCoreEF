@@ -19,7 +19,6 @@ namespace netcoreapi.EntityConfiguration
                     .IsUnicode(true)
                     .HasMaxLength(1024);
 
-            
         }
     }
 }

@@ -19,7 +19,33 @@ namespace netcoreapi.EntityConfiguration
                     .IsRequired()
                     .IsUnicode(true)
                     .HasMaxLength(256);
-
+            builder.HasData(
+                new Category
+                {
+                    ID = 1, Name = "Category 1"
+                },
+                new Category
+                {
+                    ID = 2,
+                    Name = "Category 2"
+                },
+                new Category
+                {
+                    ID = 3,
+                    Name = "Category 3"
+                },
+                new Category
+                {
+                    ID = 4,
+                    Name = "Category 4"
+                }
+                ,
+                new Category
+                {
+                    ID = 5,
+                    Name = "Category 5"
+                }
+            );
             //builder.HasMany(s => s.Products)
             //    .WithMany(c => c.Categorys)
             //    .UsingEntity(c =>
