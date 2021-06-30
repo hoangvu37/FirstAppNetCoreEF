@@ -24,9 +24,18 @@ namespace netcoreapi.DAL
         {
             _context.Set<T>().AddRange(entities);
         }
-        public IEnumerable<T> Find(Expression<Func<T, bool>> expression)
+        public IEnumerable<T> Find(Expression<Func<T, bool>> expression, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
+            string includeProperties = "", int take = 15, int skip = 0)
         {
-            return _context.Set<T>().Where(expression);
+            var query = _context.Set<T>().Where(expression);
+            //foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            //{
+            //    query = query.Include(includeProperty);
+            //}
+            query = query.Skip(skip).Take(take);
+            if (orderBy != null)
+                query = orderBy(query);
+            return query.ToList();
         }
         public IEnumerable<T> GetAll()
         {

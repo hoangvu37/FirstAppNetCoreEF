@@ -39,9 +39,9 @@ namespace netcoreapi.Controllers
         public async Task<ActionResult<IEnumerable<Product>>> GetProductByName(string sortOrder,
             string currentFilter,
             string searchString,
-            int? pageNumber)
+            int take = 15, int skip = 0)
         {
-            return _unitOfWork.Products.GetProductByName().ToList();
+            return _unitOfWork.Products.Find(expression: x => x.Name.Contains(searchString), orderBy: q => q.OrderByDescending(d => d.Name), includeProperties: "productDetail", take, skip).ToList();
         }
 
         [HttpGet("{id}")]

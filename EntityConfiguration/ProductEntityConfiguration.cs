@@ -36,7 +36,7 @@ namespace netcoreapi.EntityConfiguration
                 {
                     ID = 1,
                     Description = "Descriptions",
-                    Name = "Prodcut1",
+                    Name = "Product 1",
                     Price = 100,
                     Rating = 1,
                     DiscontinuedDate = DateTime.Now,
@@ -47,7 +47,7 @@ namespace netcoreapi.EntityConfiguration
                 {
                     ID = 2,
                     Description = "Descriptions",
-                    Name = "Prodcut 2",
+                    Name = "Product 2",
                     Price = 100,
                     Rating = 1,
                     DiscontinuedDate = DateTime.Now,
@@ -59,7 +59,7 @@ namespace netcoreapi.EntityConfiguration
                 {
                     ID = 3,
                     Description = "Descriptions 3",
-                    Name = "Prodcut 3 ",
+                    Name = "Product 3 ",
                     Price = 100,
                     Rating = 1,
                     DiscontinuedDate = DateTime.Now,
@@ -71,7 +71,7 @@ namespace netcoreapi.EntityConfiguration
                 {
                     ID = 4,
                     Description = "Descriptions 4",
-                    Name = "Prodcut 4",
+                    Name = "Product 4",
                     Price = 100,
                     Rating = 1,
                     DiscontinuedDate = DateTime.Now,

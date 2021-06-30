@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using netcoreapi.DBContext;
 
 namespace netcoreapi.Migrations
 {
     [DbContext(typeof(ProductDBContext))]
-    partial class ProductDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210630130910_addseeddbdetailsproduct2")]
+    partial class addseeddbdetailsproduct2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,44 +123,44 @@ namespace netcoreapi.Migrations
                         {
                             ID = 1L,
                             Description = "Descriptions",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 34, 26, 741, DateTimeKind.Local).AddTicks(3225),
-                            Name = "Product 1",
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 9, 9, 445, DateTimeKind.Local).AddTicks(4493),
+                            Name = "Prodcut1",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(5129),
+                            ReleaseDate = new DateTime(2021, 6, 30, 20, 9, 9, 446, DateTimeKind.Local).AddTicks(6081),
                             SupplierID = 1
                         },
                         new
                         {
                             ID = 2L,
                             Description = "Descriptions",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6420),
-                            Name = "Product 2",
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 9, 9, 446, DateTimeKind.Local).AddTicks(7489),
+                            Name = "Prodcut 2",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6432),
+                            ReleaseDate = new DateTime(2021, 6, 30, 20, 9, 9, 446, DateTimeKind.Local).AddTicks(7499),
                             SupplierID = 1
                         },
                         new
                         {
                             ID = 3L,
                             Description = "Descriptions 3",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6436),
-                            Name = "Product 3 ",
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 9, 9, 446, DateTimeKind.Local).AddTicks(7502),
+                            Name = "Prodcut 3 ",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6438),
+                            ReleaseDate = new DateTime(2021, 6, 30, 20, 9, 9, 446, DateTimeKind.Local).AddTicks(7503),
                             SupplierID = 1
                         },
                         new
                         {
                             ID = 4L,
                             Description = "Descriptions 4",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6441),
-                            Name = "Product 4",
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 9, 9, 446, DateTimeKind.Local).AddTicks(7505),
+                            Name = "Prodcut 4",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6443),
+                            ReleaseDate = new DateTime(2021, 6, 30, 20, 9, 9, 446, DateTimeKind.Local).AddTicks(7506),
                             SupplierID = 1
                         });
                 });
