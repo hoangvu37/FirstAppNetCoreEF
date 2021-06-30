@@ -6,18 +6,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace netcoreapi.DBContext
+namespace netcoreapi.EntityConfiguration
 {
-    public class SupplierEntityConfiguration : IEntityTypeConfiguration<Supplier>
+    public class ProductDetailtEntityConfiguration : IEntityTypeConfiguration<ProductDetail>
     {
-        public void Configure(EntityTypeBuilder<Supplier> builder)
+        public void Configure(EntityTypeBuilder<ProductDetail> builder)
         {
             builder.HasKey(s => s.ID);
 
-            builder.Property(p => p.Name)
+            builder.Property(p => p.Details)
                     .IsRequired()
                     .IsUnicode(true)
-                    .HasMaxLength(256);
+                    .HasMaxLength(1024);
+
+            
         }
     }
 }

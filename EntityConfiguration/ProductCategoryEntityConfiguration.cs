@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace netcoreapi.DBContext
+namespace netcoreapi.EntityConfiguration
 {
     public class ProductCategoryEntityConfiguration : IEntityTypeConfiguration<ProductCategory>
     {

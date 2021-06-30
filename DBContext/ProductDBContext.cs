@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using netcoreapi.EntityConfiguration;
 using netcoreapi.Models;
 
 namespace netcoreapi.DBContext
