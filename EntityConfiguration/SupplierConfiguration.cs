@@ -14,6 +14,8 @@ namespace netcoreapi.EntityConfiguration
         {
             builder.HasKey(s => s.ID);
 
+            builder.Property(s => s.ID).ValueGeneratedOnAdd();
+
             builder.Property(p => p.Name)
                     .IsRequired()
                     .IsUnicode(true)

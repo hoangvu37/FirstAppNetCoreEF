@@ -10,8 +10,8 @@ using netcoreapi.DBContext;
 namespace netcoreapi.Migrations
 {
     [DbContext(typeof(ProductDBContext))]
-    [Migration("20210630142242_detailseed")]
-    partial class detailseed
+    [Migration("20210630163929_initdb")]
+    partial class initdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,48 @@ namespace netcoreapi.Migrations
                     b.HasIndex("ProductsID");
 
                     b.ToTable("CategoryProduct");
+
+                    b.HasData(
+                        new
+                        {
+                            CategorysID = 1,
+                            ProductsID = 1L
+                        },
+                        new
+                        {
+                            CategorysID = 1,
+                            ProductsID = 2L
+                        },
+                        new
+                        {
+                            CategorysID = 1,
+                            ProductsID = 3L
+                        },
+                        new
+                        {
+                            CategorysID = 1,
+                            ProductsID = 4L
+                        },
+                        new
+                        {
+                            CategorysID = 2,
+                            ProductsID = 1L
+                        },
+                        new
+                        {
+                            CategorysID = 2,
+                            ProductsID = 2L
+                        },
+                        new
+                        {
+                            CategorysID = 2,
+                            ProductsID = 3L
+                        },
+                        new
+                        {
+                            CategorysID = 2,
+                            ProductsID = 4L
+                        });
                 });
 
             modelBuilder.Entity("netcoreapi.Models.Category", b =>
@@ -123,99 +165,45 @@ namespace netcoreapi.Migrations
                         {
                             ID = 1L,
                             Description = "Descriptions",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 21, 22, 42, 137, DateTimeKind.Local).AddTicks(8813),
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 23, 39, 29, 256, DateTimeKind.Local).AddTicks(3350),
                             Name = "Product 1",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 21, 22, 42, 138, DateTimeKind.Local).AddTicks(9695),
+                            ReleaseDate = new DateTime(2021, 6, 30, 23, 39, 29, 257, DateTimeKind.Local).AddTicks(4897),
                             SupplierID = 1
                         },
                         new
                         {
                             ID = 2L,
                             Description = "Descriptions",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(995),
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 23, 39, 29, 257, DateTimeKind.Local).AddTicks(6218),
                             Name = "Product 2",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(1005),
+                            ReleaseDate = new DateTime(2021, 6, 30, 23, 39, 29, 257, DateTimeKind.Local).AddTicks(6228),
                             SupplierID = 1
                         },
                         new
                         {
                             ID = 3L,
                             Description = "Descriptions 3",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(1008),
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 23, 39, 29, 257, DateTimeKind.Local).AddTicks(6231),
                             Name = "Product 3 ",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(1009),
+                            ReleaseDate = new DateTime(2021, 6, 30, 23, 39, 29, 257, DateTimeKind.Local).AddTicks(6232),
                             SupplierID = 1
                         },
                         new
                         {
                             ID = 4L,
                             Description = "Descriptions 4",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(1011),
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 23, 39, 29, 257, DateTimeKind.Local).AddTicks(6234),
                             Name = "Prodcut 4",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(1012),
+                            ReleaseDate = new DateTime(2021, 6, 30, 23, 39, 29, 257, DateTimeKind.Local).AddTicks(6235),
                             SupplierID = 1
-                        });
-                });
-
-            modelBuilder.Entity("netcoreapi.Models.ProductCategory", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CategoryID")
-                        .HasColumnType("int");
-
-                    b.Property<long>("ProductID")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("CategoryID");
-
-                    b.HasIndex("ProductID");
-
-                    b.ToTable("ProductCategory");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1L,
-                            CategoryID = 1,
-                            ProductID = 1L
-                        },
-                        new
-                        {
-                            ID = 2L,
-                            CategoryID = 1,
-                            ProductID = 2L
-                        },
-                        new
-                        {
-                            ID = 3L,
-                            CategoryID = 2,
-                            ProductID = 3L
-                        },
-                        new
-                        {
-                            ID = 4L,
-                            CategoryID = 3,
-                            ProductID = 2L
-                        },
-                        new
-                        {
-                            ID = 5L,
-                            CategoryID = 4,
-                            ProductID = 4L
                         });
                 });
 
@@ -329,25 +317,6 @@ namespace netcoreapi.Migrations
                     b.Navigation("Supplier");
                 });
 
-            modelBuilder.Entity("netcoreapi.Models.ProductCategory", b =>
-                {
-                    b.HasOne("netcoreapi.Models.Category", "Category")
-                        .WithMany("ProductCategorys")
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("netcoreapi.Models.Product", "Product")
-                        .WithMany("ProductCategorys")
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("netcoreapi.Models.ProductDetail", b =>
                 {
                     b.HasOne("netcoreapi.Models.Product", "Product")
@@ -359,15 +328,8 @@ namespace netcoreapi.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("netcoreapi.Models.Category", b =>
-                {
-                    b.Navigation("ProductCategorys");
-                });
-
             modelBuilder.Entity("netcoreapi.Models.Product", b =>
                 {
-                    b.Navigation("ProductCategorys");
-
                     b.Navigation("ProductDetail");
                 });
 

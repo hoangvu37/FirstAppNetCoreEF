@@ -18,7 +18,7 @@ namespace netcoreapi.Models
         public double Price { get; set; }
         //public int CategoryID { get; set; }
         public  virtual ICollection<Category> Categorys { get; set; }
-        public virtual ICollection<ProductCategory> ProductCategorys { get; set; }
+        //public virtual ICollection<ProductCategory> ProductCategorys { get; set; }
         public int SupplierID { get; set; }
         public virtual Supplier Supplier { get; set; }
 

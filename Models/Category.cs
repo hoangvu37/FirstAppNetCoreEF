@@ -11,6 +11,6 @@ namespace netcoreapi.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public virtual ICollection<Product> Products { get; set; }
-        public virtual ICollection<ProductCategory> ProductCategorys { get; set; }
+        //public virtual ICollection<ProductCategory> ProductCategorys { get; set; }
     }
 }

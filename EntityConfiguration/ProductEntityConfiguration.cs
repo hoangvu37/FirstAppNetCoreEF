@@ -14,6 +14,8 @@ namespace netcoreapi.EntityConfiguration
         {
             builder.HasKey(s => s.ID);
 
+            builder.Property(s => s.ID).ValueGeneratedOnAdd();
+
             builder.Property(p => p.Name)
                     .IsRequired()
                     .IsUnicode(true)
@@ -27,9 +29,25 @@ namespace netcoreapi.EntityConfiguration
                 .WithMany(s => s.Products)
                 .HasForeignKey(p => p.SupplierID);
 
-            //builder.HasOne(p => p.ProductDetail)
-            //    .WithOne(s => s.Product)
-            //    .HasForeignKey<ProductDetail>(p => p.ProductID);
+            builder.HasOne(p => p.ProductDetail)
+              .WithOne(s => s.Product)
+              .HasForeignKey<ProductDetail>(p => p.ProductID);
+
+            builder.HasMany(p => p.Categorys)
+                .WithMany(s => s.Products)
+                .UsingEntity(j => 
+                    j.ToTable("CategoryProduct")
+                    .HasData(
+                        new { CategorysID = 1, ProductsID = (long)1 },                   
+                        new { CategorysID = 1, ProductsID = (long)2 },
+                        new { CategorysID = 1, ProductsID = (long)3 },
+                        new { CategorysID = 1, ProductsID = (long)4 },
+                        new { CategorysID = 2, ProductsID = (long)1 },
+                        new { CategorysID = 2, ProductsID = (long)2 },
+                        new { CategorysID = 2, ProductsID = (long)3 },
+                        new { CategorysID = 2, ProductsID = (long)4 }
+                    )
+                );
 
             builder.HasData(
                 new Product

@@ -15,10 +15,13 @@ namespace netcoreapi.EntityConfiguration
         {
             builder.HasKey(s => s.ID);
 
+            builder.Property(s => s.ID).ValueGeneratedOnAdd();
+
             builder.Property(p => p.Name)
                     .IsRequired()
                     .IsUnicode(true)
                     .HasMaxLength(256);
+
             builder.HasData(
                 new Category
                 {
@@ -46,12 +49,7 @@ namespace netcoreapi.EntityConfiguration
                     Name = "Category 5"
                 }
             );
-            //builder.HasMany(s => s.Products)
-            //    .WithMany(c => c.Categorys)
-            //    .UsingEntity(c =>
-            //    {
-            //        c.ToTable("ProductCategory");
-            //    });
+           
         }
     }
 }

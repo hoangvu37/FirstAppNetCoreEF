@@ -16,14 +16,14 @@ namespace netcoreapi.DBContext
         public DbSet<Category> Categorys { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<ProductDetail> ProductDetails { get; set; }
-        public DbSet<ProductCategory> ProductCategory { get; set; }
+        //public DbSet<ProductCategory> ProductCategory { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new SupplierEntityConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ProductEntityConfiguration());
-            modelBuilder.ApplyConfiguration(new ProductCategoryEntityConfiguration());
+            //modelBuilder.ApplyConfiguration(new ProductCategoryEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ProductDetailtEntityConfiguration());
         }
         private IDbContextTransaction _transaction;
