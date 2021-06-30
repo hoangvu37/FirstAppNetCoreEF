@@ -12,8 +12,10 @@ namespace netcoreapi.Repository
 {
     public class ProductRepository : GenericRepository<Product>, IProductRepository
     {
+        ProductDBContext _context;
         public ProductRepository(ProductDBContext context) : base(context)
         {
+            _context = context;
         }
 
         public List<Product> GetProductByCat()
