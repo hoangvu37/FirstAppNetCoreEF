@@ -121,44 +121,44 @@ namespace netcoreapi.Migrations
                         {
                             ID = 1L,
                             Description = "Descriptions",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 34, 26, 741, DateTimeKind.Local).AddTicks(3225),
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 21, 22, 42, 137, DateTimeKind.Local).AddTicks(8813),
                             Name = "Product 1",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(5129),
+                            ReleaseDate = new DateTime(2021, 6, 30, 21, 22, 42, 138, DateTimeKind.Local).AddTicks(9695),
                             SupplierID = 1
                         },
                         new
                         {
                             ID = 2L,
                             Description = "Descriptions",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6420),
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(995),
                             Name = "Product 2",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6432),
+                            ReleaseDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(1005),
                             SupplierID = 1
                         },
                         new
                         {
                             ID = 3L,
                             Description = "Descriptions 3",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6436),
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(1008),
                             Name = "Product 3 ",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6438),
+                            ReleaseDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(1009),
                             SupplierID = 1
                         },
                         new
                         {
                             ID = 4L,
                             Description = "Descriptions 4",
-                            DiscontinuedDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6441),
-                            Name = "Product 4",
+                            DiscontinuedDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(1011),
+                            Name = "Prodcut 4",
                             Price = 100.0,
                             Rating = (short)1,
-                            ReleaseDate = new DateTime(2021, 6, 30, 20, 34, 26, 742, DateTimeKind.Local).AddTicks(6443),
+                            ReleaseDate = new DateTime(2021, 6, 30, 21, 22, 42, 139, DateTimeKind.Local).AddTicks(1012),
                             SupplierID = 1
                         });
                 });
@@ -227,7 +227,6 @@ namespace netcoreapi.Migrations
                     b.Property<string>("Details")
                         .IsRequired()
                         .HasMaxLength(1024)
-                        .IsUnicode(true)
                         .HasColumnType("nvarchar(1024)");
 
                     b.Property<long>("ProductID")
@@ -244,25 +243,25 @@ namespace netcoreapi.Migrations
                         new
                         {
                             ID = 1L,
-                            Details = "Details 1",
+                            Details = "ProductID Details 1",
                             ProductID = 1L
                         },
                         new
                         {
                             ID = 2L,
-                            Details = "Details 2",
+                            Details = "ProductID Details 2",
                             ProductID = 2L
                         },
                         new
                         {
                             ID = 3L,
-                            Details = "Details 3",
+                            Details = "ProductID Details 3",
                             ProductID = 3L
                         },
                         new
                         {
                             ID = 4L,
-                            Details = "Details 4",
+                            Details = "ProductID Details 4",
                             ProductID = 4L
                         });
                 });

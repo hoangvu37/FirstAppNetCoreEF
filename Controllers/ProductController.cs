@@ -41,7 +41,7 @@ namespace netcoreapi.Controllers
             string searchString,
             int take = 15, int skip = 0)
         {
-            return _unitOfWork.Products.Find(expression: x => x.Name.Contains(searchString), orderBy: q => q.OrderByDescending(d => d.Name), includeProperties: "productDetail", take, skip).ToList();
+            return _unitOfWork.Products.Find(expression: x => x.Name.Contains(searchString), orderBy: q => q.OrderByDescending(d => d.Name), includeProperties: "ProductDetail", take, skip).ToList();
         }
 
         [HttpGet("{id}")]

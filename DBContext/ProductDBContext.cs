@@ -20,11 +20,11 @@ namespace netcoreapi.DBContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new SupplierEntityConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ProductEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ProductCategoryEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ProductDetailtEntityConfiguration());
-            modelBuilder.ApplyConfiguration(new SupplierEntityConfiguration());
         }
         private IDbContextTransaction _transaction;
 

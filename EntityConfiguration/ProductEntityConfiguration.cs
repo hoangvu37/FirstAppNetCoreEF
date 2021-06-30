@@ -27,9 +27,9 @@ namespace netcoreapi.EntityConfiguration
                 .WithMany(s => s.Products)
                 .HasForeignKey(p => p.SupplierID);
 
-            builder.HasOne(p => p.ProductDetail)
-                .WithOne(s => s.Product)
-                .HasForeignKey<ProductDetail>(p => p.ProductID);
+            //builder.HasOne(p => p.ProductDetail)
+            //    .WithOne(s => s.Product)
+            //    .HasForeignKey<ProductDetail>(p => p.ProductID);
 
             builder.HasData(
                 new Product
@@ -71,7 +71,7 @@ namespace netcoreapi.EntityConfiguration
                 {
                     ID = 4,
                     Description = "Descriptions 4",
-                    Name = "Product 4",
+                    Name = "Prodcut 4",
                     Price = 100,
                     Rating = 1,
                     DiscontinuedDate = DateTime.Now,
