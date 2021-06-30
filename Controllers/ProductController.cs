@@ -100,7 +100,7 @@ namespace netcoreapi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTodoItem(long id)
+        public async Task<IActionResult> Delete(long id)
         {
             var item = _unitOfWork.Products.GetById(id);
 
