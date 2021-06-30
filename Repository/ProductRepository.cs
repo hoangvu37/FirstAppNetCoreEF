@@ -23,7 +23,7 @@ namespace netcoreapi.Repository
 
         public List<Product> GetProductByName()
         {
-            throw new NotImplementedException();
+            return _context.Products.OrderByDescending(d => d.Name).Take(15).Skip(1).ToList();
         }
     }
 }

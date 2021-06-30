@@ -35,6 +35,15 @@ namespace netcoreapi.Controllers
             return _unitOfWork.Products.GetAll().ToList();
         }
 
+        [HttpGet("GetProductByName")]
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductByName(string sortOrder,
+            string currentFilter,
+            string searchString,
+            int? pageNumber)
+        {
+            return _unitOfWork.Products.GetProductByName().ToList();
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> Get(long id)
         {
@@ -69,9 +78,10 @@ namespace netcoreapi.Controllers
             {
                 _unitOfWork.SaveChanges();
             }
-            catch (DbUpdateConcurrencyException) 
+            catch (DbUpdateConcurrencyException ex) 
             //when (!todoitemexists(id))
             {
+                _logger.LogError(ex.Message);
                 return NotFound();
             }
 
