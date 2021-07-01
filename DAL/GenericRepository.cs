@@ -28,10 +28,10 @@ namespace netcoreapi.DAL
             string includeProperties = "", int take = 15, int skip = 0)
         {
             var query = _context.Set<T>().Where(expression);
-            //foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-            //{
-            //    query = query.Include(includeProperty);
-            //}
+            foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
             query = query.Skip(skip).Take(take);
             if (orderBy != null)
                 query = orderBy(query);
